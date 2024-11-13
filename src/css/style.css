@@ -1,0 +1,187 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: var(--color-primary);
+}
+
+/* Header */
+header {
+  padding: var(--spacing-medium);
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 5rem;
+}
+
+header button {
+  height: 4rem;
+  width: 4rem;
+  padding: var(--spacing-medium);
+
+  border: none;
+  border-radius: 5px;
+  margin-left: auto;
+
+  position: relative;
+  font-size: 30px;
+}
+.cart-badge {
+  font-size: 8px;
+  height: 20px;
+  width: 20px;
+
+  background-color: var(--color-tertiary);
+  color: var(--color-background);
+  border-radius: 50%;
+
+  padding: 5px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+/* Main */
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xlarge);
+  padding: var(--spacing-medium);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1 h2 {
+  font-family: Georgia, "Sans-serif", Times, serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.main-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-medium);
+
+  font-size: 1.25rem;
+  letter-spacing: 0.9px;
+  line-height: 1.7;
+}
+
+.hero img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: 20% 20%;
+}
+
+/* Discover section */
+.destinations {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-2xlarge);
+}
+
+.destinations h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xlarge);
+  font-size: 2rem;
+}
+
+/* Destinations cards */
+
+.destionations__cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+}
+
+.destinations__cards {
+  display: flex;
+  align-items: center;
+
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium);
+
+  border-radius: 5px;
+  background-color: var(--color-secondary);
+  position: relative;
+}
+
+.destinations__cards img {
+  width: 15rem;
+  min-height: 10rem;
+  aspect-ratio: 3 / 2;
+
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cards__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.add-to-cart-button {
+  background-color: transparent;
+  min-width: 9rem;
+  padding: var(--spacing-small);
+
+  border: 1px solid var(--color-foreground);
+  border-radius: 5px;
+  margin-left: auto;
+}
+.add-to-cart-button:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-background);
+}
+
+.add-to-cart-button:active {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* Deal offer badge */
+.deal-offer-badge {
+  width: 4rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* padding: var(--spacing-small); */
+  border-radius: 50%;
+  background-color: var(--color-tertiary);
+  color: var(--color-background);
+  transform: rotate(30deg);
+
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}

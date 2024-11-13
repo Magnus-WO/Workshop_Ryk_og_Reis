@@ -90,3 +90,58 @@ const destinations = [
     imageUrl: "./assets/images/destinations/dan-freeman-sydney.jpg",
   },
 ];
+
+// Get DOM Elements
+
+const shoppingCartBadge = document.querySelector(".cart-badge");
+// sort-buttons
+const destionationsCardsContainer = document.querySelector(
+  ".destionations__cards-container"
+);
+
+window.addEventListener("DOMContentLoaded", renderDestinations(destinations));
+
+// Render destinations
+function renderDestinations(destinations) {
+  destionationsCardsContainer.textContent = ""; //Fjerne innholdet som allerede er der
+
+  destinations.forEach((destination) => {
+    const card = document.createElement("article");
+    card.classList.add("destinations__cards");
+
+    const image = document.createElement("img");
+    image.src = destination.imageUrl;
+
+    const cardContent = document.createElement("div");
+    cardContent.classList.add("cards__content");
+
+    const cardTitle = document.createElement("h3");
+    cardTitle.textContent = destination.title;
+
+    const description = document.createElement("p");
+    description.textContent = destination.description;
+
+    const duration = document.createElement("p");
+    duration.textContent = `Varighet: ${destination.duration} uker`;
+
+    const price = document.createElement("p");
+    price.textContent = `Pris: ${destination.price}kr`;
+
+    const addToCartButton = document.createElement("button");
+    addToCartButton.classList.add("add-to-cart-button");
+    addToCartButton.textContent = "Legg til i handlekurven";
+
+    //TODO: EVENT LISTENERS FOR SHOPPING CART
+    const dealOfferBadge = document.createElement("div");
+
+    if (destination.dealOffer) {
+      dealOfferBadge.classList.add("deal-offer-badge");
+      dealOfferBadge.textContent = "Tilbud";
+    }
+
+    //APPENDNING ELEMENTS
+    cardContent.append(cardTitle, description, duration, price);
+    card.append(image, cardContent, addToCartButton, dealOfferBadge);
+    destionationsCardsContainer.append(card);
+  });
+}
