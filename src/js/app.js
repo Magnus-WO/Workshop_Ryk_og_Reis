@@ -95,6 +95,7 @@ const destinations = [
 
 const shoppingCartBadge = document.querySelector(".cart-badge");
 // sort-buttons
+const sortButtons = document.querySelectorAll(".sort-button");
 const destionationsCardsContainer = document.querySelector(
   ".destionations__cards-container"
 );
@@ -145,3 +146,31 @@ function renderDestinations(destinations) {
     destionationsCardsContainer.append(card);
   });
 }
+
+// Sort destinations
+const sortDestinations = (e) => {
+  let sortedDestinations = [...destinations];
+
+  const sortType = e.target.dataset.sort;
+  if (sortType === "price-high") {
+    sortedDestinations = sortedDestinations.sort((a, b) => b.price - a.price);
+  } else if (sortType === "price-low") {
+    sortedDestinations = sortedDestinations.sort((a, b) => a.price - b.price);
+  } else if (sortType === "duration") {
+    sortedDestinations = sortedDestinations.sort(
+      (a, b) => a.duration - b.duration
+    );
+  } else if (sortType === "deal-offer") {
+    sortedDestinations = sortedDestinations.filter(
+      (destination) => destination.dealOffer
+    );
+  } else if (sortType === "all") {
+    sortedDestinations = [...destinations];
+  }
+
+  renderDestinations(sortedDestinations);
+};
+
+sortButtons.forEach((button) => {
+  button.addEventListener("click", (e) => sortDestinations(e));
+});

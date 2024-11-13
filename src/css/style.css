@@ -100,6 +100,7 @@ h1 h2 {
 }
 
 /* Discover section */
+
 .destinations {
   display: flex;
   flex-direction: column;
@@ -110,6 +111,22 @@ h1 h2 {
   text-align: center;
   margin-bottom: var(--spacing-xlarge);
   font-size: 2rem;
+}
+/* sort buttons */
+.sort-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--spacing-medium);
+}
+
+.sort-button {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+}
+
+.sort-button:hover {
+  color: var(--color-primary);
 }
 
 /* Destinations cards */
